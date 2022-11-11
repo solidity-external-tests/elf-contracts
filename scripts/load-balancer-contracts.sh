@@ -10,6 +10,7 @@ elif [ ! -d "./contracts/balancer-core-v2" ]; then
     git clone https://github.com/balancer-labs/balancer-core-v2.git
     cd balancer-core-v2 \
     && git checkout f153c38c5ee8911680363eaf52aad0d691896a75 \
+    && sed -i 's/code/codeBalance/' contracts/test/lib/BalancerErrorsMock.sol \
     && cd ..
 
     # blow away old-contracts
